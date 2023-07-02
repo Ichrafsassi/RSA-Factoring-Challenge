@@ -1,17 +1,18 @@
 #!/usr/bin/env bash
+# is a factors challenge
 
 check_factor()
 {
 	if [ $# -ne 3 ];
         then
                 args=("$@")
-		n2=1
-		count=0
-                for x in ${args[*]};
+                count=0
+                n2=1
+                for a in ${args[*]};
                 do
                         if [ $count -gt 1 ];
                         then
-                                n2=$(echo $a*$num2 | bc)
+                                n2=$(echo $a*$n2 | bc)
                         fi
                         count=$((count + 1))
                 done
